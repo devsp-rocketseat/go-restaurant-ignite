@@ -25,9 +25,15 @@ const ModalAddFood = ({ isOpen, setIsOpen, handleAddFood }: ModalAddFoodProps): 
   const [price, setPrice] = useState('')
   const [description, setDescription] = useState('')
 
-  const handleSubmit = async (data: FoodProps) => {
-    handleAddFood(data)
+  const handleSubmit = () => {
+    const newFood = { image, name, price, description }
+    handleAddFood(newFood)
     setIsOpen()
+
+    setImage('')
+    setName('')
+    setPrice('')
+    setDescription('')
   }
 
   return (
